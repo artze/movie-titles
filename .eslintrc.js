@@ -33,5 +33,6 @@ module.exports = {
           'tabWidth': 2,
         }],
         'react/jsx-uses-react': 'error',
+        'react/jsx-uses-vars': 'error'
     }
 };
