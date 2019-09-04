@@ -4,9 +4,7 @@ import TitleList from './TitleList';
 function App() {
   return (
     <div>
-      <header>
-        <p>Movie Titles</p>
-      </header>
+      <div>Movie Titles</div>
       <TitleList />
     </div>
   );
