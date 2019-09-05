@@ -22,11 +22,14 @@ class MovieList extends React.Component {
         <div className="movie-list__list-container">
           {this.state.movieObjectArr &&
             this.state.movieObjectArr.map((movie) => (
-              <img
-                key={movie.getId()}
-                src={movie.getPosterImageUrl()}
-                alt={movie.getTitle()}
-              />
+              <div>
+                <img
+                  key={movie.getId()}
+                  src={movie.getPosterImageUrl()}
+                  alt={movie.getTitle()}
+                />
+                <span>{movie.getTitle()}</span>
+              </div>
             ))}
         </div>
       </div>
