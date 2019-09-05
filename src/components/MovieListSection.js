@@ -1,7 +1,7 @@
 import React from 'react';
 import { getMovieListByPage } from '../services/movies/movieService';
 import MovieRowsServiceObject from '../services/movies/MovieRowsServiceObject';
-import TitleList from './TitleList';
+import MovieList from './MovieList';
 
 class MovieListSection extends React.Component {
   state = {
@@ -25,7 +25,13 @@ class MovieListSection extends React.Component {
   }
 
   render() {
-    return <TitleList />;
+    return (
+      <div>
+        {this.state.movieRows.map((row) => (
+          <MovieList key={row.row_id} {...row} />
+        ))}
+      </div>
+    );
   }
 }
 
