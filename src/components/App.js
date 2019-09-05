@@ -1,20 +1,15 @@
 import React from 'react';
-import axios from 'axios';
 import TitleList from './TitleList';
+import { getMovieListByPage } from '../services/movies/movieService';
 
 class App extends React.Component {
-  fetchMovieTitles() {
-    axios
-      .get(
-        'https://cdn-discover.hooq.tv/v1.2/discover/feed?region=ID&page=1&perPage=20'
-      )
-      .then((res) => {
-        console.log(res);
-      });
+  async fetchMovieList() {
+    const result = await getMovieListByPage(1);
+    console.log(result);
   }
 
   componentDidMount() {
-    this.fetchMovieTitles();
+    this.fetchMovieList();
   }
 
   render() {
