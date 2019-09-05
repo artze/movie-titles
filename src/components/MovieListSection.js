@@ -4,17 +4,24 @@ import MovieRowsServiceObject from '../services/movies/MovieRowsServiceObject';
 import TitleList from './TitleList';
 
 class MovieListSection extends React.Component {
-  async fetchMovieList() {
+  state = {
+    movieRows: []
+  };
+
+  async populateMovieRows() {
     const apiResponseObject = await getMovieListByPage(1);
     const movieRowsServiceObject = new MovieRowsServiceObject(
       apiResponseObject.data
     );
+    const movieRows = movieRowsServiceObject.getRowsWithMultiTitleManualCuration();
 
-    console.log(movieRowsServiceObject.getRowsWithMultiTitleManualCuration());
+    this.setState(() => ({ movieRows }));
+
+    console.log(this.state.movieRows);
   }
 
   componentDidMount() {
-    this.fetchMovieList();
+    this.populateMovieRows();
   }
 
   render() {
