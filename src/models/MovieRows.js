@@ -1,6 +1,6 @@
-class MovieRowsServiceObject {
+class MovieRows {
   constructor(apiResponseData) {
-    this.movieRows = apiResponseData.data;
+    this.movieRows = apiResponseData;
   }
 
   getRowsWithMultiTitleManualCuration() {
@@ -10,4 +10,4 @@ class MovieRowsServiceObject {
   }
 }
 
-export default MovieRowsServiceObject;
+export default MovieRows;
