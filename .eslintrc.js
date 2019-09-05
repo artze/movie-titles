@@ -11,6 +11,7 @@ module.exports = {
         'Atomics': 'readonly',
         'SharedArrayBuffer': 'readonly'
     },
+    'parser': 'babel-eslint',
     'parserOptions': {
         'ecmaFeatures': {
             'jsx': true
@@ -34,6 +35,6 @@ module.exports = {
         }],
         'react/jsx-uses-react': 'error',
         'react/jsx-uses-vars': 'error',
-        'react/state-in-constructor': 'never'
+        'react/state-in-constructor': ['error', 'never']
     }
 };
