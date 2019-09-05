@@ -1,33 +1,29 @@
 import React from 'react';
-import { getMovieListByPage } from '../services/movies/movieService';
-import MovieRowsServiceObject from '../services/movies/MovieRowsServiceObject';
+import { getMovieListByPage } from '../services/movieService';
+import MovieRows from '../models/MovieRows';
 import MovieList from './MovieList';
 
 class MovieListSection extends React.Component {
   state = {
-    movieRows: []
+    movieLists: []
   };
 
-  async populateMovieRows() {
+  async populateMovieLists() {
     const apiResponseObject = await getMovieListByPage(1);
-    const movieRowsServiceObject = new MovieRowsServiceObject(
-      apiResponseObject.data
-    );
-    const movieRows = movieRowsServiceObject.getRowsWithMultiTitleManualCuration();
+    const movieRows = new MovieRows(apiResponseObject.data);
+    const movieLists = movieRows.getRowsWithMultiTitleManualCuration();
 
-    this.setState(() => ({ movieRows }));
-
-    console.log(this.state.movieRows);
+    this.setState(() => ({ movieLists }));
   }
 
   componentDidMount() {
-    this.populateMovieRows();
+    this.populateMovieLists();
   }
 
   render() {
     return (
       <div>
-        {this.state.movieRows.map((row) => (
+        {this.state.movieLists.map((row) => (
           <MovieList key={row.row_id} {...row} />
         ))}
       </div>
