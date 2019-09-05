@@ -1,6 +1,6 @@
 class MovieRows {
   constructor(apiResponseData) {
-    this.movieRows = apiResponseData.data;
+    this.movieRows = apiResponseData;
   }
 
   getRowsWithMultiTitleManualCuration() {

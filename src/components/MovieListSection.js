@@ -9,8 +9,8 @@ class MovieListSection extends React.Component {
   };
 
   async populateMovieLists() {
-    const apiResponseObject = await getMovieListByPage(1);
-    const movieRows = new MovieRows(apiResponseObject.data);
+    const apiResponseData = await getMovieListByPage(1);
+    const movieRows = new MovieRows(apiResponseData);
     const movieLists = movieRows.getRowsWithMultiTitleManualCuration();
 
     this.setState(() => ({ movieLists }));
