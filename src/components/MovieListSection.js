@@ -39,7 +39,7 @@ class MovieListSection extends React.Component {
   addScrollEventListener() {
     window.addEventListener(
       'scroll',
-      debounce(() => this.appendMovieLists(), 0)
+      debounce(() => this.appendMovieLists(), 200)
     );
   }
 
