@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  scrollbar-color: rgba(120, 120, 120, 0.5) rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -18,4 +19,20 @@ button {
 
 button:disabled {
   cursor: default;
+}
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(120, 120, 120, 0.5);
 }
