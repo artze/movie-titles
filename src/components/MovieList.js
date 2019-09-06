@@ -22,12 +22,8 @@ class MovieList extends React.Component {
         <div className="movie-list__list-container">
           {this.state.movieObjectArr &&
             this.state.movieObjectArr.map((movie) => (
-              <div>
-                <img
-                  key={movie.getId()}
-                  src={movie.getPosterImageUrl()}
-                  alt={movie.getTitle()}
-                />
+              <div key={movie.getId()}>
+                <img src={movie.getPosterImageUrl()} alt={movie.getTitle()} />
                 <span>{movie.getTitle()}</span>
               </div>
             ))}
