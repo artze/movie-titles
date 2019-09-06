@@ -1,5 +1,6 @@
 import React from 'react';
 import Movie from '../models/Movie';
+import MovieListItem from './MovieListItem';
 
 class MovieList extends React.Component {
   state = {
@@ -22,10 +23,7 @@ class MovieList extends React.Component {
         <div className="movie-list__list-container">
           {this.state.movieObjectArr &&
             this.state.movieObjectArr.map((movie) => (
-              <div key={movie.getId()}>
-                <img src={movie.getPosterImageUrl()} alt={movie.getTitle()} />
-                <span>{movie.getTitle()}</span>
-              </div>
+              <MovieListItem key={movie.getId()} movie={movie} />
             ))}
         </div>
       </div>
