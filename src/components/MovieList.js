@@ -1,5 +1,5 @@
 import React from 'react';
-import Movie from '../models/Movie';
+import MovieRowItem from '../models/MovieRowItem';
 import MovieListItem from './MovieListItem';
 
 class MovieList extends React.Component {
@@ -8,7 +8,9 @@ class MovieList extends React.Component {
   };
 
   populateMovieObjectArr() {
-    const movieObjectArr = this.props.data.map((movie) => new Movie(movie));
+    const movieObjectArr = this.props.data.map(
+      (movie) => new MovieRowItem(movie)
+    );
     this.setState(() => ({ movieObjectArr }));
   }
 
@@ -22,8 +24,11 @@ class MovieList extends React.Component {
         <p>{this.props.row_name}</p>
         <div className="movie-list__list-container">
           {this.state.movieObjectArr &&
-            this.state.movieObjectArr.map((movie) => (
-              <MovieListItem key={movie.getId()} movie={movie} />
+            this.state.movieObjectArr.map((movieRowItem) => (
+              <MovieListItem
+                key={movieRowItem.getId()}
+                movieRowItem={movieRowItem}
+              />
             ))}
         </div>
       </div>
