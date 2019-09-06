@@ -1,4 +1,4 @@
-class Movie {
+class MovieRowItem {
   constructor(data) {
     this.movie = data;
   }
@@ -16,4 +16,4 @@ class Movie {
   }
 }
 
-export default Movie;
+export default MovieRowItem;
