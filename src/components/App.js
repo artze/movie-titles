@@ -3,7 +3,6 @@ import MovieListSection from './MovieListSection';
 
 const App = () => (
   <div>
-    <div>Movie Titles</div>
     <MovieListSection />
   </div>
 );
