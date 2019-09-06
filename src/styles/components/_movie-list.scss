@@ -7,6 +7,7 @@
   flex-direction: row;
   margin-top: $s-size;
   overflow-x: scroll;
+  padding: 0 0 $s-size 0;
 }
 
 .movie-list__title {
