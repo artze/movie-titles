@@ -1,6 +1,17 @@
+.movie-list__container {
+  margin-top: $l-size;
+}
+
 .movie-list__list-container {
-  border: 1px solid blue;
   display: flex;
   flex-direction: row;
+  margin-top: $s-size;
   overflow-x: scroll;
+}
+
+.movie-list__title {
+  color: white;
+  font-size: $l-size;
+  font-weight: 700;
+  margin: 0 0 0 $s-size;
 }
