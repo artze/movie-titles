@@ -23,8 +23,8 @@ class MovieListSection extends React.Component {
 
   async appendMovieLists() {
     if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
+      window.innerHeight + document.documentElement.scrollTop >
+      document.documentElement.offsetHeight - 500
     ) {
       const apiResponseData = await this.movieService.getMovieLists();
       const movieRows = new MovieRows(apiResponseData);
