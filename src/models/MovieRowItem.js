@@ -1,18 +1,19 @@
 class MovieRowItem {
   constructor(data) {
-    this.movie = data;
+    this.movieRowItem = data;
   }
 
   getId() {
-    return this.movie.id;
+    return this.movieRowItem.id;
   }
 
   getTitle() {
-    return this.movie.title;
+    return this.movieRowItem.title;
   }
 
   getPosterImageUrl() {
-    return this.movie.images.find((image) => image.type === 'POSTER').url;
+    return this.movieRowItem.images.find((image) => image.type === 'POSTER')
+      .url;
   }
 }
 
