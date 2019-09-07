@@ -70,6 +70,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### Notes
 * Use factory to create model instances to check for input parameter integrity and throw errors when needed
 * Models of data classes are created only when practically necessary. Inconsistency present.
-* Instance variables in `movieService` redundant for `getMovieData` method.
 * 'Watch Now' is simply a visual dummy.
 * Organize css better.
+* Styling is optimized for screen size of > 1920px. Styling for smaller screen sizes would have been done had there been more time.
+* Unit test is written for the following functionalities, relating to the scroll-pagination feature. Ideally, tests should be expanded to cover other areas.
+  * Ensure API calls are not triggered after last page of movie rows is retrieved
+  * Ensure API calls are not triggered when there is a pending request
