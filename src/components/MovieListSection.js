@@ -5,6 +5,11 @@ import MovieRows from '../models/MovieRows';
 import MovieList from './MovieList';
 
 class MovieListSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleScrollEvent = debounce(() => this.appendMovieLists(), 200);
+  }
+
   state = {
     movieLists: []
   };
@@ -37,15 +42,20 @@ class MovieListSection extends React.Component {
   }
 
   addScrollEventListener() {
-    window.addEventListener(
-      'scroll',
-      debounce(() => this.appendMovieLists(), 200)
-    );
+    window.addEventListener('scroll', this.handleScrollEvent);
+  }
+
+  removeScrollEventListener() {
+    window.removeEventListener('scroll', this.handleScrollEvent);
   }
 
   componentDidMount() {
     this.populateMovieLists();
     this.addScrollEventListener();
+  }
+
+  componentWillUnmount() {
+    this.removeScrollEventListener();
   }
 
   render() {
