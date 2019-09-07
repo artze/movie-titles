@@ -1,28 +1,30 @@
 import React from 'react';
-import axios from 'axios';
 import Movie from '../models/Movie';
 import NavSection from './NavSection';
+import MovieService from '../services/MovieService';
 
 class MoviePage extends React.Component {
-  movieId = this.props.location.pathname.substring(
-    this.props.location.pathname.lastIndexOf('/') + 1
-  );
-
   state = {
     movie: null
   };
 
-  getMovieData() {
-    axios
-      .get(`https://cdn-discover.hooq.tv/v1.2/discover/titles/${this.movieId}`)
-      .then((res) => {
-        console.log(res.data.data);
-        this.setState(() => ({ movie: new Movie(res.data.data) }));
-      });
+  movieId = this.props.location.pathname.substring(
+    this.props.location.pathname.lastIndexOf('/') + 1
+  );
+
+  movieService = new MovieService();
+
+  async populateMovieData() {
+    const apiResponseData = await this.movieService.getMovieDataById(
+      this.movieId
+    );
+    const movie = new Movie(apiResponseData);
+
+    this.setState(() => ({ movie }));
   }
 
   componentDidMount() {
-    this.getMovieData();
+    this.populateMovieData();
   }
 
   render() {

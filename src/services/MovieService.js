@@ -27,6 +27,20 @@ class MovieService {
           this.lastPageFetched === this.totalPages ? true : false;
 
         return res.data.data;
+      })
+      .catch((res) => {
+        console.log(res);
+      });
+  }
+
+  async getMovieDataById(movieId) {
+    return axios
+      .get(`https://cdn-discover.hooq.tv/v1.2/discover/titles/${movieId}`)
+      .then((res) => {
+        return res.data.data;
+      })
+      .catch((res) => {
+        console.log(res);
       });
   }
 }
