@@ -1,0 +1,52 @@
+.movie-page__container {
+  margin: 0 auto;
+  max-width: 150rem;
+}
+
+.movie-page__content {
+  display: flex;
+}
+
+.movie-page__content-column:nth-of-type(1) {
+  width: 40%;
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.movie-page__content-column:nth-of-type(2) {
+  align-items: center;
+  display: flex;
+  width: 60%;
+}
+
+.movie-page__title {
+  color: white;
+}
+
+.movie-page__description-container {
+  max-width: 80rem;
+
+  button {
+    background-color: $blue;
+    border: none;
+    color: white;
+    font-size: $l-size;
+    font-weight: 600;
+    margin-top: 5%;
+    padding: $s-size 0;
+    width: 40%;
+  }
+}
+
+.movie-page__text {
+  color: white;
+  font-size: $l-size;
+  margin-top: $xl-size;
+}
+
+.movie-page__language-container {
+  display: inline;
+}
