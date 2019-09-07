@@ -73,3 +73,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 * Instance variables in `movieService` redundant for `getMovieData` method.
 * 'Watch Now' is simply a visual dummy.
 * Organize css better.
+* Styling is optimized for screen size of > 1920px. Styling for smaller screen sizes would have been done had there been more time.
