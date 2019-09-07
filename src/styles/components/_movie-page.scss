@@ -50,3 +50,16 @@
 .movie-page__language-container {
   display: inline;
 }
+
+.nav-btn {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: $l-size;
+  margin: $l-size 0;
+
+  img {
+    vertical-align: middle;
+  }
+}
