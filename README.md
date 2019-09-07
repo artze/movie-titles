@@ -1,78 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# movie-titles
 
-## Available Scripts
+## Running Locally
+1. Clone this repo.
+2. Install dependencies with `npm install`.
+3. Run app with `npm start`. 
+4. Visit app at `http://localhost:3000/`
 
-In the project directory, you can run:
+## Run test 
+1. Run `npm test`.
+2. If you get a message with 'No tests found related to files changed since last commit.', press the `a` key to run all tests.
 
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-### Notes
-* Use factory to create model instances to check for input parameter integrity and throw errors when needed
-* Models of data classes are created only when practically necessary. Inconsistency present.
-* 'Watch Now' is simply a visual dummy.
-* Organize css better.
-* Styling is optimized for screen size of > 1920px. Styling for smaller screen sizes would have been done had there been more time.
-* Unit test is written for the following functionalities, relating to the scroll-pagination feature. Ideally, tests should be expanded to cover other areas.
+## Notes
+* 'Watch Now' on individual movie page is simply a visual dummy.
+* For brevity, models of data entities are created only where practically necessary.
+* Styling is optimized for screen size of 1920px and above. Styling for smaller screen sizes would have been done had there been more time.
+* Ideally, contructor arguments of data entity classes would be validated with the use of factories.
+* Unit tests are written for the following functionalities, relating to the scroll-pagination feature. Ideally, tests should be expanded to cover other areas.
   * Ensure API calls are not triggered after last page of movie rows is retrieved
   * Ensure API calls are not triggered when there is a pending request
