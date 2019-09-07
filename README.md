@@ -69,4 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### Notes
 * Use factory to create model instances to check for input parameter integrity and throw errors when needed
-* Models of data classes are created only when practically necessary. 
+* Models of data classes are created only when practically necessary. Inconsistency present.
+* Instance variables in `movieService` redundant for `getMovieData` method.
+* 'Watch Now' is simply a visual dummy.
+* Organize css better.

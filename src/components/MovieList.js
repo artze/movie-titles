@@ -20,8 +20,8 @@ class MovieList extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>{this.props.row_name}</p>
+      <div className="movie-list__container">
+        <p className="movie-list__title">{this.props.row_name}</p>
         <div className="movie-list__list-container">
           {this.state.movieObjectArr &&
             this.state.movieObjectArr.map((movieRowItem) => (

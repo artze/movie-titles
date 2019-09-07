@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Movie from '../models/Movie';
+import NavSection from './NavSection';
 
 class MoviePage extends React.Component {
   movieId = this.props.location.pathname.substring(
@@ -31,11 +32,36 @@ class MoviePage extends React.Component {
     const languages = this.state.movie && this.state.movie.getLanguages();
 
     return (
-      <div>
-        <h1>{title}</h1>
-        <img src={imageUrl} alt={title} />
-        <p>{description}</p>
-        {languages && languages.length > 0 && <p>Available in: {languages}</p>}
+      <div className="movie-page__container">
+        <NavSection />
+        <div className="movie-page__content">
+          <div className="movie-page__content-column">
+            <h1 className="movie-page__title">{title}</h1>
+            <img src={imageUrl} alt={title} />
+          </div>
+          <div className="movie-page__content-column">
+            <div className="movie-page__description-container">
+              <p className="movie-page__text">{description}</p>
+              {languages && languages.length > 0 && (
+                <div className="movie-page__text">
+                  Available in:{' '}
+                  {languages.map((language, index) => (
+                    <div
+                      key={language}
+                      className="movie-page__language-container"
+                    >
+                      {language}
+                      {index < languages.length - 1 && <span>,&nbsp;</span>}
+                    </div>
+                  ))}
+                </div>
+              )}
+              <div className="movie-page__action-container">
+                <button>Watch Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
