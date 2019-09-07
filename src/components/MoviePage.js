@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Movie from '../models/Movie';
-import backIcon from '../assets/icons/back-icon.svg';
+import NavSection from './NavSection';
 
 class MoviePage extends React.Component {
   movieId = this.props.location.pathname.substring(
@@ -34,12 +33,7 @@ class MoviePage extends React.Component {
 
     return (
       <div className="movie-page__container">
-        <Link to={'/'}>
-          <button className="nav-btn">
-            <img src={backIcon} />
-            &nbsp;Back
-          </button>
-        </Link>
+        <NavSection />
         <div className="movie-page__content">
           <div className="movie-page__content-column">
             <h1 className="movie-page__title">{title}</h1>
